@@ -10,18 +10,14 @@ env:
   global:
     - FOO=FUBU
 
-  matrix:
-    - M1=one
-    - M2=two
-    - M3=three
 
 
 build:
   pre_ci:
-    - docker build -t=shiphitchcock2/sample-node-test .
+    - docker build -t=shiphitchcock2/sample-node-resources .
 
   pre_ci_boot:
-    image_name: shiphitchcock2/sample-node-test
+    image_name: shiphitchcock2/sample-node-resources
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -33,11 +29,10 @@ build:
    # - sleep 6m
 
   post_ci:
-    - docker push shiphitchcock2/sample-node-test
-
+    - docker push shiphitchcock2/sample-node-resources
+    
 integrations:
   hub:
     - integrationName: ship-docker
       type: docker
       
-Status 
