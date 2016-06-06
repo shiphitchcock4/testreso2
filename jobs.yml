@@ -4,3 +4,4 @@ jobs :
       type : manifest
       steps :
         - GET jun5-resource1
+        - PUT jun5-resource1
