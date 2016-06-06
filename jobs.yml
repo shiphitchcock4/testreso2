@@ -1,6 +1,6 @@
 jobs :
   - job :
-      name : newfolder1
+      name : jun5test
       type : manifest
       steps :
-        - GET resource1
+        - GET jun5-resource1
